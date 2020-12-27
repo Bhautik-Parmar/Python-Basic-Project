@@ -1,0 +1,62 @@
+import random
+lst = ["s", "w", "g"]
+
+# print(comp_choice)
+
+comp_point = 0
+hum_point = 0
+chance = 10
+no_of_choice = 0
+print("\t\t\tSnake - Water - Gun___Game")
+print("S for Snake and W for Water and G for Gun")
+while no_of_choice < chance:
+    hum_choice = input("Enter 's','w','g':")
+    hum_choice = hum_choice.lower()
+    comp_choice = random.choice(lst)
+    if hum_choice == comp_choice:
+        print("Both choice is same so, both get 0 point")
+        print(f"your choice is '{hum_choice}' and computer choice is '{comp_choice}'\n "
+              f"your point is '{hum_point}' and computer point is '{comp_point}'\n")
+    elif hum_choice == "s" and comp_choice == "w":
+        hum_point += 1
+        print(f"your choice is '{hum_choice}' and computer choice is '{comp_choice}'\n "
+              "you get the one point\n"
+              f"your point is '{hum_point}' and computer point is '{comp_point}'\n")
+    elif hum_choice == "s" and comp_choice == "g":
+        comp_point += 1
+        print(f"your choice is '{hum_choice}' and computer choice is '{comp_choice}'\n "
+              "computer get the one point\n"
+              f"your point is '{hum_point}' and computer point is '{comp_point}'\n")
+    elif hum_choice == "w" and comp_choice == "s":
+        comp_point += 1
+        print(f"your choice is '{hum_choice}' and computer choice is '{comp_choice}'\n "
+              "computer get the one point\n"
+              f"your point is '{hum_point}' and computer point is '{comp_point}'\n")
+    elif hum_choice == "w" and comp_choice == "g":
+        hum_point += 1
+        print(f"your choice is '{hum_choice}' and computer choice is '{comp_choice}'\n "
+              "you get the one point\n"
+              f"your point is '{hum_point}'and computer point is '{comp_point}'\n")
+    elif hum_choice == "g" and comp_choice == "s":
+        hum_point += 1
+        print(f"your choice is '{hum_choice}' and computer choice is '{comp_choice}' \n"
+              "you get the one point\n"
+              f"your point is '{hum_point}' and computer point is '{comp_point}'\n")
+    elif hum_choice == "g" and comp_choice == "w":
+        comp_point += 1
+        print(f"your choice is '{hum_choice}' and computer choice is '{comp_choice}'\n "
+              "computer get the one point\n"
+              f"your point is '{hum_point}' and computer point is '{comp_point}'\n")
+    else:
+        print("you entered wrong input")
+
+    no_of_choice += 1
+    print(f"{10-no_of_choice} chances left out of {chance}")
+if comp_point == hum_point:
+    print("Both score is same: Game is Tie!!!")
+
+elif comp_point > hum_point:
+    print("computer win the  game : Better luck next time")
+
+else:
+    print("Congratulation You won the game")
