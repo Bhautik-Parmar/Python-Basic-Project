@@ -1,8 +1,5 @@
 import random
 lst = ["s", "w", "g"]
-
-# print(comp_choice)
-
 comp_point = 0
 hum_point = 0
 chance = 10
@@ -10,13 +7,15 @@ no_of_choice = 0
 print("\t\t\tSnake - Water - Gun___Game")
 print("S for Snake and W for Water and G for Gun")
 while no_of_choice < chance:
-    hum_choice = input("Enter 's','w','g':")
+    hum_choice = input("Enter 's','w','g'")#Get input from user
     hum_choice = hum_choice.lower()
     comp_choice = random.choice(lst)
+    #When both choose same input
     if hum_choice == comp_choice:
         print("Both choice is same so, both get 0 point")
         print(f"your choice is '{hum_choice}' and computer choice is '{comp_choice}'\n "
               f"your point is '{hum_point}' and computer point is '{comp_point}'\n")
+
     elif hum_choice == "s" and comp_choice == "w":
         hum_point += 1
         print(f"your choice is '{hum_choice}' and computer choice is '{comp_choice}'\n "
@@ -49,14 +48,15 @@ while no_of_choice < chance:
               f"your point is '{hum_point}' and computer point is '{comp_point}'\n")
     else:
         print("you entered wrong input")
-
+    #To print number of chances left
     no_of_choice += 1
     print(f"{10-no_of_choice} chances left out of {chance}")
+#Game tie!!!
 if comp_point == hum_point:
     print("Both score is same: Game is Tie!!!")
-
+#Computer Wins
 elif comp_point > hum_point:
     print("computer win the  game : Better luck next time")
-
+#User wins
 else:
     print("Congratulation You won the game")
